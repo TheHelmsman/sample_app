@@ -1,8 +1,21 @@
 SampleApp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/contact"
+  # Refactored eiyj named routes
+  #get "static_pages/home"
+  #get "static_pages/help"
+  #get "static_pages/about"
+  #get "static_pages/contact"
+
+  # This code maps the root URI / to /static pages/home, and also gives URI helpers
+  # root path => '/'
+  # root url => 'http://localhost:3000/'
+  root  to: 'static_pages#home'
+
+  # the code match ’/help also automatically creates named routes for use in the controllers and views:
+  # help path => '/help'
+  # help url => 'http://localhost:3000/help'
+  match '/help',    to: 'static_pages#help'
+  match '/about',   to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
