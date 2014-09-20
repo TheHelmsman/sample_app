@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  get "users/new"
+
   # Refactored eiyj named routes
   #get "static_pages/home"
   #get "static_pages/help"
@@ -9,6 +11,8 @@ SampleApp::Application.routes.draw do
   # root path => '/'
   # root url => 'http://localhost:3000/'
   root  to: 'static_pages#home'
+
+  match '/signup',  to: 'users#new'
 
   # the code match ’/help also automatically creates named routes for use in the controllers and views:
   # help path => '/help'
