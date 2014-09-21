@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
+  resources :users
+  #get "users/new"
 
   # Refactored eiyj named routes
   #get "static_pages/home"
